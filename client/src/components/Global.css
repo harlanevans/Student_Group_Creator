@@ -1,0 +1,231 @@
+/* ---------- Fonts ----------  */
+@import url('https://fonts.googleapis.com/css?family=Martel:300|Raleway&display=swap');
+
+@font-face {
+  src: url('https://fonts.googleapis.com/css?family=Martel:300|Raleway&display=swap');
+  font-family: 'Martel', serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* font-family: 'Martel', serif;
+font-family: 'Raleway', sans-serif; */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* font-family: 'Lora', serif;
+font-family: 'Raleway', sans-serif; */
+/*! ---------------------------------------- Colors ----------------------------------------  */
+
+/* #604162 #22223B , #4A4E69 , #9A8C98 , #C9ADA7 , #F2E9E4 */
+
+/* ?---------------------------------------- NavBar ----------------------------------------  */
+.navbar-cont {
+  background-color: #22223B;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 25%;
+}
+
+
+.nav-link {
+  padding: 1em;
+  border: none;
+  text-decoration: none !important;
+}
+
+.nav-hover {
+  padding: .5em;
+  color: white;
+}
+
+/*  Underline Animation */
+.nav-link>.nav-hover {
+  position: relative;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-link>.nav-hover:hover {
+  color: #000;
+}
+
+.nav-link>.nav-hover:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.nav-link>.nav-hover:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/*! ---------------------------------------- Home ----------------------------------------  */
+
+.home-cont {
+  height: 100vh;
+  width: 100%;
+}
+
+.home-title {
+  padding: 3em 0em;
+}
+
+.home-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em 0em;
+}
+
+.home-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50%;
+  width: 50%;
+  padding: 5em;
+  /* border: solid 5px #4A4E69; */
+  background-color: #4A4E69;
+  color: #F2E9E4;
+}
+
+.git-link {
+  color: #C9ADA7;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 1s ease;
+}
+
+
+.git-link:hover {
+  color: #C9ADA7;
+  letter-spacing: 3px;
+  /* transition: all .5s ease; */
+}
+
+/*? ---------------------------------------- Students ----------------------------------------  */
+
+.s-cont {
+  height: 100vh;
+  /* width: 100%; */
+  padding: 2em 2em;
+}
+
+.s-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.s-button-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1em 2em;
+}
+
+/*! ---------------------------------------- Student Show ----------------------------------------  */
+
+.students-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* padding: 2em; */
+  width: 100%;
+  /* border: solid 2px #2b304e; */
+}
+
+.s-grid-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2em;
+  /* border: solid 2px #642424; */
+}
+
+.s-grid-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* border: solid 2px peru; */
+  flex: 50%;
+}
+
+.student-box {
+  border: solid 2px #2b304e;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #adb7ca;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 50%;
+}
+
+.student-skills {
+  /* border: 1px solid purple; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  padding: .5em;
+}
+
+.s-show-but-cont {
+  padding: 1em 0em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  flex: 50%;
+}
+
+.skills-text {
+  padding: 0em 1em;
+  border-right: solid 1px #4A4E69;
+}
+
+.skills-text-right {
+  padding: 0em 1em;
+}
+
+.student-name-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  /* padding: .5em 1.5em; */
+
+}
