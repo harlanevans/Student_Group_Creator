@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { SubTitle, Text, EditButton, DeleteButton } from "../../styles/Styled";
 import StudentForm from "./StudentForm";
+import axios from 'axios'
 
-const StudentShow = ({ id, deleteStudent, editStudent, ...rest }) => {
+const StudentShow = ({ addAverage, calculateTeams, id, deleteStudent, editStudent, ...rest }) => {
   const [editing, setEditing] = useState(false);
+
 
   const toggleEdit = () => {
     setEditing(!editing);
   };
-
+  
   return (
     <div>
       <div className="student-box">
@@ -24,6 +26,7 @@ const StudentShow = ({ id, deleteStudent, editStudent, ...rest }) => {
           </Text>
           <Text className="skills-text">Soft Skills: {rest.soft}</Text>
           <Text className="skills-text-right">Effort Level: {rest.effort}</Text>
+          <Text className="skills-text-right">Average: {rest.average}</Text>
         </div>
         <div className="s-show-but-cont">
           <EditButton onClick={toggleEdit}>Edit Student</EditButton>

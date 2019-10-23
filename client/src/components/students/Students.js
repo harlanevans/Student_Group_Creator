@@ -7,7 +7,7 @@ import StudentForm from "./StudentForm";
 import StudentShow from "./StudentShow";
 
 class Students extends React.Component {
-  state = { adding: false, students: [] };
+  state = { adding: false, students: [], low: [], med: [], high: [] };
 
   componentDidMount() {
     axios.get("/api/students/").then(res => {
@@ -15,12 +15,24 @@ class Students extends React.Component {
     });
   }
 
+  calculateTeams = (averageData) => {
+    const { low, med, high } = this.state
+    if(averageData <= 2) {
+      this.setState({low: [...low, averageData]})
+    } else if (averageData >= 3 && averageData <= 4) {
+      this.setState({med: [...med, averageData]})
+    } else {
+      this.setState({high: [...high, averageData]})
+    }
+      
+    console.log(this.state.team1)
+  }
+
   addStudent = student => {
     axios.post("/api/students", student).then(res => {
       const { students } = this.state;
       this.setState({ students: [...students, res.data] });
-      // window.location.href = '/students'
-
+      // window.location.href = '/students
     });
   };
 
@@ -59,6 +71,7 @@ class Students extends React.Component {
                 {...s}
                 deleteStudent={this.deleteStudent}
                 editStudent={this.editStudent}
+                calculateTeams={this.calculateTeams}
               />
             </div>
           );
