@@ -9,7 +9,8 @@ class StudentForm extends React.Component {
     full_time: true,
     technical: "",
     soft: "",
-    effort: ""
+    effort: "",
+    average: ""
   };
 
   componentDidMount() {
@@ -26,6 +27,7 @@ class StudentForm extends React.Component {
     this.setState({
       [name]: value
     });
+    this.calculateAverage()
   };
 
   handleSubmit = e => {
@@ -42,9 +44,21 @@ class StudentForm extends React.Component {
       full_time: true,
       technical: "",
       soft: "",
-      effort: ""
+      effort: "",
+      average: ""
     });
   };
+
+  //this will give you an average score of each students skills
+  calculateAverage = () => {
+    if (this.state.soft !== '' && this.state.technical !== '' && this.state.effort !== ''){
+    const sum = parseFloat(this.state.technical, 10) + parseFloat(this.state.soft, 10) + parseFloat(this.state.effort, 10)
+    const ave = sum/3
+    this.setState({average: Number((ave).toFixed(1))})
+    } else {
+      console.log('hit')
+    }
+  }
 
   render() {
     const {
@@ -53,13 +67,21 @@ class StudentForm extends React.Component {
       full_time,
       technical,
       soft,
-      effort
+      effort,
+      average
     } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <div className="input-cont">
             <div className="input-col-one">
+            <label>Average</label>
+              <input
+                name="average"
+                value={average}
+                placeholder="Average"
+                onChange={this.handleChange}
+              />
               <label>First Name</label>
               <input
                 name="first_name"
