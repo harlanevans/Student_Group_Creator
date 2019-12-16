@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
-    resources :students
+    resources :cohorts do
+      resources :students
+    end
   end
 end

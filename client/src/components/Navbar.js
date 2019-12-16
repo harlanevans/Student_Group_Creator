@@ -20,6 +20,11 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div className="nav-right">
+        <NavLink to="/cohorts" className="nav-link">
+          <div className="nav-hover">
+            <NavText>Cohorts</NavText>
+          </div>
+        </NavLink>
         <NavLink to="/students" className="nav-link">
           <div className="nav-hover">
             <NavText>Students</NavText>

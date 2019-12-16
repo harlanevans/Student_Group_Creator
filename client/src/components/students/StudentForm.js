@@ -24,12 +24,13 @@ class StudentForm extends React.Component {
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
+    this.calculateAverage()
     this.setState({
       [name]: value
-    });
-    this.calculateAverage()
+    },
+    );
   };
-
+  
   handleSubmit = e => {
     e.preventDefault();
     if (this.props.id) {
@@ -54,7 +55,8 @@ class StudentForm extends React.Component {
     if (this.state.soft !== '' && this.state.technical !== '' && this.state.effort !== ''){
     const sum = parseFloat(this.state.technical, 10) + parseFloat(this.state.soft, 10) + parseFloat(this.state.effort, 10)
     const ave = sum/3
-    this.setState({average: Number((ave).toFixed(1))})
+     const averageMath = Number((ave).toFixed(1));
+    this.setState({average: Math.round(averageMath)})
     } else {
       console.log('hit')
     }

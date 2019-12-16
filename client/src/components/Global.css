@@ -25,26 +25,28 @@ font-family: 'Raleway', sans-serif; */
   background-color: #22223B;
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 
 .nav-left {
   display: flex;
   flex-direction: row;
-  width: 75%;
+  width: 50%;
+  padding: 0em 1em;
 }
 
 .nav-right {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 25%;
+  width: 50%;
+  padding: 0em 1em;
 }
 
 
 .nav-link {
-  padding: 1em;
+  padding: 1em 0em;
   border: none;
   text-decoration: none !important;
 }
@@ -229,3 +231,38 @@ font-family: 'Raleway', sans-serif; */
   /* padding: .5em 1.5em; */
 
 }
+
+/*! ---------------------------------------- Cohort ----------------------------------------  */
+
+.cohort-box {
+  border: solid 2px #2b304e;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px #adb7ca;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 50%;
+}
+
+
+.cohorts-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* padding: 2em; */
+  width: 100%;
+  /* border: solid 2px #2b304e; */
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: .5s;
+}
+
+/* a:hover {
+  background-color: rgba(242, 233, 228, .5); 
+  transition: .5s;
+} */

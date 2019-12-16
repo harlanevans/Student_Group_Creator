@@ -16,7 +16,7 @@ const HomePage = () => {
         </Fade>
       </div>
       <div className="home-row">
-        <Link to="/students">
+        <Link to="/cohorts">
           <Button>Get Started</Button>
         </Link>
       </div>

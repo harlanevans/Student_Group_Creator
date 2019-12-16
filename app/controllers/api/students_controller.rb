@@ -6,7 +6,7 @@ class Api::StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(student_parms)
+    @student = Student.new(student_params)
     if @student.save
       render json: @student
     else
@@ -15,7 +15,7 @@ class Api::StudentsController < ApplicationController
   end
 
   def update
-    if @student.update(student_parms)
+    if @student.update(student_params)
       render json: @student
     else
       render json: { errors: stat.errors }, status: :unprocessable_entity
@@ -32,7 +32,7 @@ class Api::StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
-  def student_parms
+  def student_params
     params.require(:student).permit(:first_name, :last_name, :full_time, :technical, :soft, :effort, :average)
   end
 end
